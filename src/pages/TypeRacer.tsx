@@ -37,6 +37,7 @@ const TypeRacer = (props: any) => {
                     error={error}
                 />
             )}
+            <hr />
             <Form
                 words={words}
                 wordIndex={wordIndex}
@@ -51,6 +52,7 @@ const TypeRacer = (props: any) => {
                 startPlay={setIsPlaying}
                 startTime={setStartTime}
             />
+            {isPlaying && <p>Typing...</p>}
             {endTime && (
                 <ScoreBoard
                     startTime={startTime}
