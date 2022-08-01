@@ -1,3 +1,5 @@
+import "./ScoreBoard.css";
+
 const ScoreBoard = (props: any) => {
     const { startTime, endTime, words } = props;
 
@@ -10,7 +12,7 @@ const ScoreBoard = (props: any) => {
     };
 
     return (
-        <table className="table table-striped my-3">
+        <table className="center">
             <thead>
                 <tr>
                     <th scope="col">#</th>

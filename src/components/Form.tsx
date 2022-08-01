@@ -42,6 +42,10 @@ const Form = (props: any) => {
             return setUserInput(value);
         }
 
+        // move to next word
+        props.nextWord((prevIndex: number) => prevIndex + 1);
+        resetForm();
+
         // if correct go to next index
         setMistype(false);
         // End Game
@@ -49,10 +53,6 @@ const Form = (props: any) => {
             setIsPlaying(false);
             return setEndTime(Date.now());
         }
-
-        // move to next word
-        props.nextWord((prevIndex: number) => prevIndex + 1);
-        resetForm();
     };
 
     const onSumbit = (e: any) => {
@@ -69,6 +69,7 @@ const Form = (props: any) => {
                         onChange={onChange}
                         value={userInput}
                         InputProps={{ readOnly: !isPlaying }}
+                        inputProps={{ min: 0, style: { textAlign: "center" } }}
                         inputRef={textInput}
                         autoComplete="off"
                     ></TextField>
